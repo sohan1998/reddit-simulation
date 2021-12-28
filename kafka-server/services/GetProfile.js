@@ -4,10 +4,10 @@ const pool = require('../../server/utils/mysqlConnection');
 
 async function handle_request(msg, callback) {
     let email = msg.email;
-    console.log('GOt email in callback fn', email);
+    console.log('Got email in callback fn', email);
     const profileQuery = 'select * from User where email=?';
     pool.query(profileQuery, [email], (err, result) => {
-        console.log('Got query result1111');
+        console.log('Got query result');
         if (err) {
             console.log('In error', err);
             callback(null, error);
