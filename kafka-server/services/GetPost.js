@@ -43,4 +43,94 @@ async function handle_request(msg, callback) {
     }
     console.log('out');
     console.log(joined_community_array);
+
+    posts_array = [];
+
+    switch (sortExpression) {
+        case 'numberOfUpvotesAsc':
+            for (let i = 0; i < joined_community_array.length; i++) {
+                await Post.find({ communityName: joined_community_array[i] })
+                    .sort({ numberOfUpvotes: 1 })
+                    .then((result, error) => {
+                        if (error) {
+                            callback(null, error);
+                        } else {
+                            console.log('Inside Else of result');
+                            console.log(result);
+                            posts_array = [...posts_array, ...result];
+                        }
+                    });
+            }
+            callback(null, posts_array);
+            break;
+
+        case 'numberOfUpvotesDesc':
+            for (let i = 0; i < joined_community_array.length; i++) {
+                await Post.find({ communityName: joined_community_array[i] })
+                    .sort({ numberOfUpvotes: -1 })
+                    .then((result, error) => {
+                        if (error) {
+                            callback(null, error);
+                        } else {
+                            console.log('Inside Else of result');
+                            console.log(result);
+                            posts_array = [...posts_array, ...result];
+                        }
+                    });
+            }
+            callback(null, posts_array);
+            break;
+
+        case 'numberOfDownvotesAsc':
+            for (let i = 0; i < joined_community_array.length; i++) {
+                await Post.find({ communityName: joined_community_array[i] })
+                    .sort({ numberOfDownvotes: 1 })
+                    .then((result, error) => {
+                        if (error) {
+                            callback(null, error);
+                        } else {
+                            console.log('Inside Else of result');
+                            console.log(result);
+                            posts_array = [...posts_array, ...result];
+                        }
+                    });
+            }
+            callback(null, posts_array);
+            break;
+
+        case 'numberOfDownvotesDesc':
+            for (let i = 0; i < joined_community_array.length; i++) {
+                await Post.find({ communityName: joined_community_array[i] })
+                    .sort({ numberOfDownvotes: -1 })
+                    .then((result, error) => {
+                        if (error) {
+                            callback(null, error);
+                        } else {
+                            console.log('Inside Else of result');
+                            console.log(result);
+                            posts_array = [...posts_array, ...result];
+                        }
+                    });
+            }
+            callback(null, posts_array);
+            break;
+
+        default:
+            for (let i = 0; i < joined_community_array.length; i++) {
+                await Post.find({ communityName: joined_community_array[i] })
+                    .sort({ createdTime: -1 })
+                    .then((result, error) => {
+                        if (error) {
+                            callback(null, error);
+                        } else {
+                            console.log('Inside Else of result');
+                            console.log(result);
+                            posts_array = [...posts_array, ...result];
+                        }
+                    });
+            }
+            callback(null, posts_array);
+    }
 }
+
+exports.handle_request = handle_request;
