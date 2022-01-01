@@ -21,7 +21,7 @@ async function handle_request(msg, callback) {
             if (error) {
                 callback(null, error);
             } else {
-                console.log('Inside Else of result');
+                // console.log('Inside Else of result');
                 console.log(result);
                 callback(null, result);
             }
