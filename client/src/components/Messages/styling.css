@@ -73,6 +73,31 @@ body {
     background: white;
 }
 
+.send-message-form {
+    background: var(--send-message-form);
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 5px;
+    height: 40px;
+    border: 2px solid powderblue;
+}
+
+.send-message-form input {
+    width: 100%;
+    padding: 15px 10px;
+    border: none;
+    margin: 0;
+    background: var(--send-message-form);
+    font-weight: 200;
+}
+
+.send-message-form input:focus {
+    outline-width: 0;
+}
+
+.send-message-form input::placeholder {
+    color: black;
+}
 .user-list {
     overflow: scroll;
 }
