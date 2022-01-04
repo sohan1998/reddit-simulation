@@ -10,8 +10,8 @@
 
 .modal {
     display: flex;
-    alignitems: center;
-    justifycontent: center;
+    /* alignitems: center;
+    justifycontent: center; */
 }
 
 .toggle-mod {
