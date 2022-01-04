@@ -70,6 +70,44 @@ function CreatePost() {
         });
     }, [location]);
 
+    let handlePost = () => {
+        return new Promise((resolve, reject) => {
+            Axios.post(
+                endPointObj.url + 'api/createPost',
+                {
+                    createdByEmail: email,
+                    communityName: community_name,
+                    postTitle: post_title,
+                    flag: type,
+                    images: images,
+                    url: url,
+                    text: text,
+                },
+                {
+                    headers: {
+                        Authorization: 'jwt ' + sessionStorage.getItem('token'),
+                    },
+                }
+            )
+                .then((response) => {
+                    console.log(response);
+                    setAlertMessage('Post Created Successfully');
+                    alert('Post created Successfully');
+
+                    setTitle('');
+                    setText('');
+                    setURL('');
+                    // tinyMCE.activeEditor.setContent("");
+                })
+                .catch((err) => {
+                    console.error('an error occured');
+                    if (err.response && err.response.data) {
+                        setAlertMessage(err.response.data);
+                    }
+                });
+        });
+    };
+
     // if (type === "url") {
     return (
         <div>
