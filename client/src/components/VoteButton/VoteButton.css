@@ -3,37 +3,36 @@
     text-align: center;
     flex-direction: column;
     font-size: 1em;
-  }
-  
-  .votesection {
+}
+
+.votesection {
     margin: 0px;
     background-color: greenyellow;
-  }
-  .upvote,
-  .downvote {
+}
+.upvote,
+.downvote {
     cursor: pointer;
     border-radius: 2px solid;
-  }
-  
-  .upvote-color {
+}
+
+.upvote-color {
     cursor: pointer;
     border-radius: 2px solid;
     color: blue;
-  }
-  .downvote-color {
+}
+.downvote-color {
     cursor: pointer;
     border-radius: 2px solid;
     color: red;
-  }
-  
-  .upvote:hover {
+}
+
+.upvote:hover {
     color: green;
-  }
-  .downvote:hover {
+}
+.downvote:hover {
     color: red;
-  }
-  
-  .votecount {
+}
+
+.votecount {
     font-weight: bold;
-  }
-  
+}

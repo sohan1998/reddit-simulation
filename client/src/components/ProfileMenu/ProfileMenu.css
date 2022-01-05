@@ -2,14 +2,14 @@
     width: 100px !important;
     background-color: #ffff !important;
     height: 50px;
-  }
-  
-  .profile-avatar {
+}
+
+.profile-avatar {
     margin-left: -60px;
     position: absolute;
-  }
-  
-  .icon-down {
+}
+
+.icon-down {
     margin-right: -60px;
     color: gray;
-  }
+}
