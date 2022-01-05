@@ -41,3 +41,10 @@
     color: #0079d3;
     background-color: transparent;
   }
+
+  .sidebar > ul > li {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #1c1c1c;
+  }
