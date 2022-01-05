@@ -4,7 +4,6 @@ const pool = require('../../server/utils/mysqlConnection');
 const multer = require('multer');
 
 async function handle_request(msg, callback) {
-    console.log('Here');
     const email = msg.email;
     const file_path = msg.url;
     console.log('Getting email', email);
